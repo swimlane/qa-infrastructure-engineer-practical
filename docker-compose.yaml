@@ -3,7 +3,7 @@ services:
   nodeapp:
     container_name: swimlane-practical
     restart: always
-    image: quay.io/swimlane/swimlane-qa-infrastructure-engineer-practical:latest
+    image: quay.io/swimlane/qa-infrastructure-engineer-practical:latest
     ports:
       - "3000:3000"
     environment:
