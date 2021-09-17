@@ -1,0 +1,29 @@
+version: "3"
+services:
+  nodeapp:
+    container_name: swimlane-practical
+    restart: always
+    image: quay.io/swimlane/swimlane-qa-infrastructure-engineer-practical:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/swimlane
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    networks:
+      - swimlane-practical-network
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.4.6
+    volumes:
+      - ~/mongo:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - swimlane-practical-network
+networks:
+  swimlane-practical-network:
+    driver: bridge
