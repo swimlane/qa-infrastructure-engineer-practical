@@ -5,8 +5,8 @@ Resources for the QA Infrastructure Engineer practical assigment. Relies on the 
 ## Build Steps
 - Copy the devops-practical repo into this directory: `rsync -av ../devops-practical . --exclude .git --exclude .gitignore`
 - `docker build . -t qa-infrastructure-engineer-practical:dev`
-- `docker run -p 3000:3000 -t -d qa-infrastructure-engineer-practical:dev`
 - `docker tag qa-infrastructure-engineer-practical:dev quay.io/swimlane/qa-infrastructure-engineer-practical:latest`
+- Verify functionality
+  - `docker-compose up`
+  - Access at http://localhost:3000 
 - `docker push quay.io/swimlane/qa-infrastructure-engineer-practical:latest`
-- `docker-compose up`
-- Access at http://localhost:3000
